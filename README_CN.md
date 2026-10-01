@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/chy4pro/jev-for-chrome/actions/workflows/check.yml"><img src="https://github.com/chy4pro/jev-for-chrome/actions/workflows/check.yml/badge.svg" alt="check"></a>
+  <a href="https://chromewebstore.google.com/detail/jev-for-chrome/eilccpbbmfhmlkgfbmkjjffdhcemdbig"><img src="https://img.shields.io/chrome-web-store/v/eilccpbbmfhmlkgfbmkjjffdhcemdbig?label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
   <a href="https://github.com/chy4pro/jev-for-chrome/releases"><img src="https://img.shields.io/github/v/release/chy4pro/jev-for-chrome?display_name=tag" alt="release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/chy4pro/jev-for-chrome" alt="license"></a>
 </p>
@@ -32,7 +33,6 @@
 
 其他项目的描述取自它们 2026 年 9 月的 README。
 
-## 工作方式
 ## 工作方式
 
 1. 内容脚本读取当前可见页面：每个可交互元素得到一个由代码分配的编号、角色、可访问名称和当前值；可见文本最多取 6,000 字符。不截图。
@@ -82,7 +82,9 @@ Jev 返回的是候选项上的概率分布，弹窗里每一步都能看到模�
 
 ## 安装
 
-暂未上架 Chrome 应用商店。
+**从 Chrome 应用商店安装**（推荐）：安装 [Jev for Chrome](https://chromewebstore.google.com/detail/jev-for-chrome/eilccpbbmfhmlkgfbmkjjffdhcemdbig)，然后[配置](#配置)模型 key。安装时 Chrome 会提示它能**读取和更改你在所有网站上的数据**（任何网站都可以开始一次运行，扩展要读取并操作那个页面），以及使用页面调试器（可信输入：点击和按键通过 Chrome 的 DevTools 协议发送，运行期间 Chrome 会显示「已开始调试此浏览器」的提示条）。读取什么、发往哪里，见[哪些数据会离开你的浏览器](#哪些数据会离开你的浏览器)和 [docs/PRIVACY.md](docs/PRIVACY.md)。
+
+每个版本都要先过 Chrome 的审核，商店才会提供，所以商店上的版本可能比 Releases 页面晚一版；页首的商店徽章显示的就是商店当前提供的版本。
 
 **用发布包**：到 [Releases 页面](https://github.com/chy4pro/jev-for-chrome/releases)，在 **Assets** 下载 `jev-for-chrome-extension-<版本>.zip`（不是 **Source code**）。解压，打开 `chrome://extensions`，开启开发者模式，点 **加载已解压的扩展程序**，选择解压出来的目录——也就是直接包含 `manifest.json` 的那一层。
 

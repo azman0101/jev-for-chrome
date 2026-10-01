@@ -4,6 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/chy4pro/jev-for-chrome/actions/workflows/check.yml"><img src="https://github.com/chy4pro/jev-for-chrome/actions/workflows/check.yml/badge.svg" alt="check"></a>
+  <a href="https://chromewebstore.google.com/detail/jev-for-chrome/eilccpbbmfhmlkgfbmkjjffdhcemdbig"><img src="https://img.shields.io/chrome-web-store/v/eilccpbbmfhmlkgfbmkjjffdhcemdbig?label=Chrome%20Web%20Store" alt="Chrome Web Store"></a>
   <a href="https://github.com/chy4pro/jev-for-chrome/releases"><img src="https://img.shields.io/github/v/release/chy4pro/jev-for-chrome?display_name=tag" alt="release"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/chy4pro/jev-for-chrome" alt="license"></a>
 </p>
@@ -32,7 +33,6 @@ A Chrome extension that drives the tab you are looking at with [TypeSafe Jev](ht
 
 Descriptions of the other projects are taken from their READMEs in September 2026.
 
-## How it works
 ## How it works
 
 1. The content script reads the visible page: every interactive element gets a code-owned index, a role, an accessible name and its current value. Visible text is captured up to 6,000 characters. No screenshots.
@@ -82,7 +82,9 @@ Sites behind Cloudflare's "verify you are human" page (Cambridge Dictionary, All
 
 ## Install
 
-There is no Chrome Web Store listing yet.
+**From the Chrome Web Store** (recommended): install [Jev for Chrome](https://chromewebstore.google.com/detail/jev-for-chrome/eilccpbbmfhmlkgfbmkjjffdhcemdbig), then [configure](#configure) a model key. The install prompt asks to *read and change all your data on all websites* (a run can be started on any site, and the extension has to read and act on that page) and for the page debugger (trusted input: clicks and keystrokes go through Chrome's DevTools protocol, and Chrome shows a "started debugging this browser" bar while a run is active). What is read and where it is sent: [What leaves your browser](#what-leaves-your-browser) and [docs/PRIVACY.md](docs/PRIVACY.md).
+
+Each version goes through Chrome's review before the store serves it, so the store can be a version behind the Releases page; the store badge at the top shows the version it serves.
 
 **From a release**: on the [Releases page](https://github.com/chy4pro/jev-for-chrome/releases), under **Assets**, download `jev-for-chrome-extension-<version>.zip` (not **Source code**). Unzip it, open `chrome://extensions`, turn on Developer mode, click **Load unpacked** and pick the unzipped folder: the one that directly contains `manifest.json`.
 
