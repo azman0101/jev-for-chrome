@@ -1,0 +1,47 @@
+name: build-extension
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build extension
+        run: npm run build
+
+      - name: Package extension zip
+        run: npm run package
+
+      - name: Upload dist artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-dist-${{ github.sha }}
+          path: dist
+          if-no-files-found: error
+
+      - name: Upload packaged extension artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extension-release-zip-${{ github.sha }}
+          path: release/*.zip
+          if-no-files-found: error
